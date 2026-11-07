@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RedVanta Bazar | বাংলাদেশের বিশ্বস্ত অনলাইন মার্কেটপ্লেস</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Hind Siliguri for Clean Bengali Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #1E3A8A;
+            --primary-light: #2563EB;
+            --primary-dark: #1E293B;
+            --accent: #10B981;
+            --whatsapp: #25D366;
+            --bg-light: #F8FAFC;
+            --card-bg: #FFFFFF;
+            --text-main: #1E293B;
+            --text-muted: #64748B;
+            --border: #E2E8F0;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --radius: 12px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Hind Siliguri', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.5;
+            padding-bottom: 70px; /* Space for mobile nav */
+        }
+
+        /* Top Notification Bar */
+        .top-bar {
+            background-color: var(--primary-dark);
+            color: #fff;
+            font-size: 13px;
+            padding: 6px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .top-bar a {
+            color: #38BDF8;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Header */
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+        .logo-icon {
+            background: linear-gradient(135deg, #EF4444, #1E3A8A);
+            color: white;
+            width: 38px;
+            height: 38px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .logo-text {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        .logo-text span {
+            color: #EF4444;
+        }
+
+        .search-box {
+            flex: 1;
+            max-width: 500px;
+            min-width: 220px;
+            position: relative;
+        }
+        .search-box input {
+            width: 100%;
+            padding: 10px 40px 10px 16px;
+            border: 2px solid var(--border);
+            border-radius: 25px;
+            outline: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        .search-box input:focus {
+            border-color: var(--primary-light);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+        .search-box i {
+            position: absolute;
+            right: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 9px 16px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+        .btn-primary {
+            background-color: var(--primary-light);
+            color: white;
+        }
+        .btn-primary:hover {
+            background-color: var(--primary);
+        }
+        .btn-post {
+            background: linear-gradient(135deg, #10B981, #059669);
+            color: white;
+            box-shadow: 0 2px 4px rgba(16, 185, 129, 0.2);
+        }
+        .btn-post:hover {
+            opacity: 0.95;
+            transform: translateY(-1px);
+        }
+        .btn-admin {
+            background-color: #F1F5F9;
+            color: var(--text-main);
+            border: 1px solid var(--border);
+        }
+        .btn-admin:hover {
+            background-color: #E2E8F0;
+        }
+
+        /* Banner Section */
+        .hero-banner {
+            background: linear-gradient(135deg, #1E3A8A 0%, #2563EB 100%);
+            color: white;
+            padding: 24px 16px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .hero-banner h1 {
+            font-size: 24px;
+            margin-bottom: 6px;
+            font-weight: 700;
+        }
+        .hero-banner p {
+            font-size: 14px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 12px;
+        }
+        .badge-list {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-size: 12px;
+        }
+        .badge-item {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 4px 10px;
+            border-radius: 15px;
+            backdrop-filter: blur(4px);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+        /* Categories Bar */
+        .categories-wrapper {
+            margin-bottom: 24px;
+            overflow-x: auto;
+            white-space: nowrap;
+            padding-bottom: 8px;
+            scrollbar-width: thin;
+        }
+        .categories-wrapper::-webkit-scrollbar {
+            height: 4px;
+        }
+        .categories-wrapper::-webkit-scrollbar-thumb {
+            background: #CBD5E1;
+            border-radius: 4px;
+        }
+        .category-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            margin-right: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-main);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .category-pill:hover, .category-pill.active {
+            background-color: var(--primary-light);
+            color: white;
+            border-color: var(--primary-light);
+        }
+
+        /* Section Heading */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Product Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+
+        /* Product Card */
+        .product-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow);
+        }
+        .card-img-wrap {
+            position: relative;
+            width: 100%;
+            height: 180px;
+            background-color: #F1F5F9;
+        }
+        .card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .condition-tag {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: rgba(30, 41, 59, 0.85);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+        .card-content {
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        .card-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 6px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            height: 44px;
+        }
+        .card-price {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary-light);
+            margin-bottom: 8px;
+        }
+        .card-meta {
+            font-size: 12px;
+            color: var(--text-muted);
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            margin-bottom: 12px;
+            margin-top: auto;
+        }
+        .card-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .card-actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+        .btn-view {
+            background-color: #EFF6FF;
+            color: var(--primary-light);
+            text-align: center;
+            padding: 8px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-view:hover {
+            background-color: #DBEAFE;
+        }
+        .btn-wa {
+            background-color: var(--whatsapp);
+            color: white;
+            text-align: center;
+            padding: 8px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+        }
+        .btn-wa:hover {
+            opacity: 0.9;
+        }
+
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 40px 16px;
+            background: white;
+            border-radius: var(--radius);
+            border: 1px dashed var(--border);
+            grid-column: 1 / -1;
+        }
+        .empty-state i {
+            font-size: 40px;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            backdrop-filter: blur(4px);
+        }
+        .modal.active {
+            display: flex;
+        }
+        .modal-content {
+            background: white;
+            border-radius: var(--radius);
+            max-width: 600px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: modalSlideUp 0.3s ease;
+        }
+        @keyframes modalSlideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .modal-header {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            background: white;
+            z-index: 10;
+        }
+        .modal-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 20px;
+            color: var(--text-muted);
+            cursor: pointer;
+        }
+        .modal-body {
+            padding: 20px;
+        }
+
+        /* Product Detail View Modal Specifics */
+        .detail-img {
+            width: 100%;
+            max-height: 300px;
+            object-fit: contain;
+            background-color: #F8FAFC;
+            border-radius: 8px;
+            margin-bottom: 16px;
+        }
+        .detail-price {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-light);
+            margin: 8px 0;
+        }
+        .detail-info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            background-color: #F1F5F9;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            margin: 16px 0;
+        }
+        .disclaimer-box {
+            background-color: #FFFBEB;
+            border: 1px solid #FDE68A;
+            border-radius: 8px;
+            padding: 12px;
+            margin-top: 16px;
+            font-size: 13px;
+            color: #B45309;
+        }
+
+        /* Form Controls */
+        .form-group {
+            margin-bottom: 14px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: var(--text-main);
+        }
+        .form-control {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 14px;
+            outline: none;
+        }
+        .form-control:focus {
+            border-color: var(--primary-light);
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        /* Admin Pending Items Table / List */
+        .admin-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            margin-bottom: 10px;
+            gap: 12px;
+        }
+        .admin-item-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .admin-thumb {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 4px;
+            background: #eee;
+        }
+        .admin-actions {
+            display: flex;
+            gap: 6px;
+        }
+        .btn-approve {
+            background-color: var(--accent);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .btn-reject {
+            background-color: #EF4444;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        /* Mobile Bottom Nav Bar */
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: white;
+            border-top: 1px solid var(--border);
+            padding: 8px 0;
+            justify-content: space-around;
+            z-index: 99;
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
+        }
+        .mobile-nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 11px;
+            color: var(--text-muted);
+            text-decoration: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        .mobile-nav-item i {
+            font-size: 18px;
+            margin-bottom: 2px;
+        }
+        .mobile-nav-item.active {
+            color: var(--primary-light);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: white;
+            padding: 30px 16px;
+            margin-top: 40px;
+            font-size: 13px;
+        }
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+        }
+        .footer-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #38BDF8;
+        }
+        .footer-links {
+            list-style: none;
+        }
+        .footer-links li {
+            margin-bottom: 6px;
+        }
+        .footer-links a {
+            color: #94A3B8;
+            text-decoration: none;
+        }
+        .footer-links a:hover {
+            color: white;
+        }
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #334155;
+            margin-top: 20px;
+            color: #94A3B8;
+        }
+
+        /* Responsive Layout Tweaks */
+        @media (max-width: 768px) {
+            .mobile-nav {
+                display: flex;
+            }
+            .header-actions .btn-post {
+                display: none; /* Accessible from bottom nav */
+            }
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Announcement Bar -->
+    <div class="top-bar">
+        <div><i class="fa-solid fa-bullhorn"></i> RedVanta Bazar - এ সম্পূর্ণ বিনামূল্যে বিজ্ঞাপন পোস্ট করুন!</div>
+        <div>হটলাইন: <a href="tel:8801677161678">8801677161678</a></div>
+    </div>
+
+    <!-- Main Header -->
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo" onclick="filterByCategory('সব')">
+                <div class="logo-icon">R</div>
+                <div class="logo-text">RedVanta<span>Bazar</span></div>
+            </a>
+
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="পণ্য, ক্যাটাগরি বা লোকেশন খুঁজুন..." onkeyup="handleSearch()">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+
+            <div class="header-actions">
+                <button class="btn btn-admin" onclick="openAdminModal()">
+                    <i class="fa-solid fa-user-shield"></i> অ্যাডমিন <span id="pendingBadge" style="background: red; color: white; border-radius: 50%; padding: 0 6px; font-size: 11px; display: none;">0</span>
+                </button>
+                <button class="btn btn-post" onclick="openPostModal()">
+                    <i class="fa-solid fa-circle-plus"></i> ফ্রি পোস্ট করুন
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Banner -->
+    <section class="hero-banner">
+        <h1>সরাসরি বিক্রেতার সাথে যোগাযোগ করুন</h1>
+        <p>কোনো মধ্যস্থতাকারী নেই! সরাসরি সেলারের WhatsApp-এ মেসেজ দিয়ে কথা বলুন ও নিরাপদে পণ্য কেনাবেচা করুন।</p>
+        <div class="badge-list">
+            <span class="badge-item"><i class="fa-solid fa-check-circle"></i> ১০০% ফ্রি পোস্টিং</span>
+            <span class="badge-item"><i class="fa-solid fa-shield-halved"></i> ম্যানুয়াল এডমিন ভেরিফিকেশন</span>
+            <span class="badge-item"><i class="fa-brands fa-whatsapp"></i> সরাসরি WhatsApp ডিরেক্ট</span>
+        </div>
+    </section>
+
+    <!-- Main Content Area -->
+    <div class="container">
+
+        <!-- Category Horizontal Filter -->
+        <div class="categories-wrapper" id="categoryContainer">
+            <button class="category-pill active" onclick="filterByCategory('সব')"><i class="fa-solid fa-border-all"></i> সব পণ্য</button>
+            <button class="category-pill" onclick="filterByCategory('মোবাইল ও ট্যাবলেট')"><i class="fa-solid fa-mobile-screen-button"></i> মোবাইল ও ট্যাবলেট</button>
+            <button class="category-pill" onclick="filterByCategory('ল্যাপটপ ও কম্পিউটার')"><i class="fa-solid fa-laptop"></i> ল্যাপটপ ও কম্পিউটার</button>
+            <button class="category-pill" onclick="filterByCategory('ইলেকট্রনিক্স')"><i class="fa-solid fa-tv"></i> ইলেকট্রনিক্স</button>
+            <button class="category-pill" onclick="filterByCategory('ফ্যাশন')"><i class="fa-solid fa-shirt"></i> ফ্যাশন</button>
+            <button class="category-pill" onclick="filterByCategory('হোম ও লিভিং')"><i class="fa-solid fa-couch"></i> হোম ও লিভিং</button>
+            <button class="category-pill" onclick="filterByCategory('অন্যান্য')"><i class="fa-solid fa-box"></i> অন্যান্য</button>
+        </div>
+
+        <!-- Section Title -->
+        <div class="section-header">
+            <div class="section-title" id="sectionTitle">
+                <i class="fa-solid fa-bag-shopping" style="color: var(--primary-light);"></i> সর্বশেষ অনুমোদিত পণ্যসমূহ
+            </div>
+            <div style="font-size: 13px; color: var(--text-muted);" id="itemCount">০টি পণ্য পাওয়া গেছে</div>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="product-grid" id="productGrid">
+            <!-- Products dynamic insertion -->
+        </div>
+
+    </div>
+
+    <!-- Mobile Navigation Bar -->
+    <div class="mobile-nav">
+        <button class="mobile-nav-item active" onclick="filterByCategory('সব')">
+            <i class="fa-solid fa-house"></i>
+            <span>হোম</span>
+        </button>
+        <button class="mobile-nav-item" onclick="openPostModal()">
+            <i class="fa-solid fa-square-plus" style="color: var(--accent); font-size: 22px;"></i>
+            <span>ফ্রি পোস্ট</span>
+        </button>
+        <button class="mobile-nav-item" onclick="openAdminModal()">
+            <i class="fa-solid fa-lock"></i>
+            <span>অ্যাডমিন</span>
+        </button>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div>
+                <div class="logo-text" style="color: white; margin-bottom: 8px;">RedVanta<span>Bazar</span></div>
+                <p style="color: #94A3B8; margin-bottom: 12px;">বাংলাদেশের নিরাপদ ও সরাসরি অনলাইন কেনাবেচার স্থান। আমাদের প্ল্যাটফর্মে সরাসরি বিক্রেতার সাথে কথা বলে লেনদেন করতে পারেন।</p>
+            </div>
+            <div>
+                <div class="footer-title">হেল্প ও সাপোর্ট</div>
+                <ul class="footer-links">
+                    <li><i class="fa-solid fa-phone"></i> কাস্টমার সেবা: 8801677161678</li>
+                    <li><i class="fa-solid fa-envelope"></i> ইমেইল: support@redvantabazar.com</li>
+                    <li><i class="fa-solid fa-location-dot"></i> ঢাকা, বাংলাদেশ</li>
+                </ul>
+            </div>
+            <div>
+                <div class="footer-title">ডেলিভারি নীতিমালা</div>
+                <p style="color: #94A3B8;">ডেলিভারি সংক্রান্ত বিষয়াদি সম্পূর্ণভাবে ক্রেতা ও বিক্রেতার পারস্পরিক সমঝোতার ভিত্তিতে নির্ধারিত হবে। সুন্দরবন, এসএ পরিবহন বা অন্য যেকোনো সুবিধাজনক কুরিয়ার ব্যবহার করা যাবে।</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; ২০২৬ RedVanta Bazar (রেডভ্যান্টা বাজার)। সর্বস্বত্ব সংরক্ষিত।
+        </div>
+    </footer>
+
+    <!-- MODAL 1: Free Post Submission Modal -->
+    <div class="modal" id="postModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title"><i class="fa-solid fa-circle-plus" style="color: var(--accent);"></i> বিনামূল্যে পণ্য বিক্রি পোস্ট করুন</div>
+                <button class="close-btn" onclick="closePostModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="postForm" onsubmit="handlePostSubmit(event)">
+                    <div class="form-group">
+                        <label>পণ্যের শিরোনাম *</label>
+                        <input type="text" id="postTitle" class="form-control" placeholder="যেমন: iPhone 13 Pro 128GB - ভালো কন্ডিশন" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>মূল্য (টাকা) *</label>
+                            <input type="number" id="postPrice" class="form-control" placeholder="যেমন: 65000" required>
+                        </div>
+                        <div class="form-group">
+                            <label>ক্যাটাগরি *</label>
+                            <select id="postCategory" class="form-control" required>
+                                <option value="">বাছাই করুন</option>
+                                <option value="মোবাইল ও ট্যাবলেট">মোবাইল ও ট্যাবলেট</option>
+                                <option value="ল্যাপটপ ও কম্পিউটার">ল্যাপটপ ও কম্পিউটার</option>
+                                <option value="ইলেকট্রনিক্স">ইলেকট্রনিক্স</option>
+                                <option value="ফ্যাশন">ফ্যাশন</option>
+                                <option value="হোম ও লিভিং">হোম ও লিভিং</option>
+                                <option value="অন্যান্য">অন্যান্য</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>কন্ডিশন *</label>
+                            <select id="postCondition" class="form-control" required>
+                                <option value="ব্যবহৃত">ব্যবহৃত (Used)</option>
+                                <option value="নতুন">নতুন (Brand New)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>আপনার অবস্থান / শহর *</label>
+                            <input type="text" id="postLocation" class="form-control" placeholder="যেমন: মিরপুর, ঢাকা" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>আপনার নাম (বিক্রেতা) *</label>
+                            <input type="text" id="postSellerName" class="form-control" placeholder="আপনার নাম লিখুন" required>
+                        </div>
+                        <div class="form-group">
+                            <label>WhatsApp নম্বর (কোডসহ) *</label>
+                            <input type="tel" id="postWhatsapp" class="form-control" placeholder="01XXXXXXXXX" required>
+                            <small style="font-size: 11px; color: var(--text-muted);">দেশি কোডসহ লিখুন (যেমন: 8801...) </small>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>ছবি URL (অথবা ডিফল্ট লিঙ্ক)</label>
+                        <input type="url" id="postImage" class="form-control" placeholder="https://images.unsplash.com/...">
+                        <small style="font-size: 11px; color: var(--text-muted);">ফাঁকা রাখলে পণ্যের ক্যাটাগরি অনুযায়ী ছবি দেখাবে</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label>পণ্যের বিবরণ *</label>
+                        <textarea id="postDescription" class="form-control" rows="3" placeholder="পণ্যের বিস্তারিত বিবরণ, কোনো ত্রুটি আছে কিনা তা সত্যভাবে লিখুন..." required></textarea>
+                    </div>
+
+                    <div style="background: #F1F5F9; padding: 10px; border-radius: 6px; font-size: 12px; margin-bottom: 16px; color: var(--text-muted);">
+                        <i class="fa-solid fa-circle-info"></i> আপনার পোস্টটি সাবমিট করার পর এডমিন রিভিউ করে পাবলিশ করবেন।
+                    </div>
+
+                    <button type="submit" class="btn btn-post" style="width: 100%; justify-content: center; padding: 12px;">
+                        <i class="fa-solid fa-paper-plane"></i> পোস্ট জমা দিন
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 2: Product Detail Modal -->
+    <div class="modal" id="detailModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">পণ্যের বিবরণ</div>
+                <button class="close-btn" onclick="closeDetailModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="detailModalBody">
+                <!-- Loaded dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 3: Admin Approval Modal -->
+    <div class="modal" id="adminModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title"><i class="fa-solid fa-user-shield"></i> অ্যাডমিন রিভিউ প্যানেল</div>
+                <button class="close-btn" onclick="closeAdminModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 14px;">এখানে পেন্ডিং এ থাকা সেলারদের পোস্টগুলো অনুমোদন (Approve) অথবা বাতিল (Delete) করতে পারবেন।</p>
+                
+                <div id="pendingList">
+                    <!-- Dynamic pending items -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Default Sample Approved Products (Real-world feel, NO fake reviews or ratings)
+        const initialProducts = [
+            {
+                id: 1,
+                title: "HP EliteBook 735 G6 - Ryzen 5 Pro, 8GB RAM, 256GB SSD",
+                price: 28500,
+                category: "ল্যাপটপ ও কম্পিউটার",
+                location: "মিরপুর-১, ঢাকা",
+                condition: "ব্যবহৃত",
+                sellerName: "RedVanta Bazar",
+                whatsapp: "8801677161678",
+                image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgoJx--penbV6RfP3JyjSDwSlYlVKInaCXa3e8V9q90viM9NYZns4dxvZwqMCQbF0Ifi3UbJw_0f11VgV3c302-G--i7YSj3ofNzTmKQet4WRfur_sMDnb9whAZUJ6uwo08VYtPCSr0-wQ4QGks02o9cAU14tiLdxk10Id95_QnQqzIXxrZ365dKqjGQD8q/s1600/IMG_20261103_170533_105.jpg",
+                date: "৬ নভেম্বর, ২০২৬",
+                description: "ফ্রেশ কন্ডিশনের ব্যবহৃত ল্যাপটপ। মিরপুরে এসে হাতে দেখে, চালিয়ে যাচাই করে নিতে পারবেন।",
+                status: "approved"
+            },
+            {
+                id: 2,
+                title: "Dell Latitude 5420 - Core i7 11th Gen, 8GB RAM, 512GB SSD",
+                price: 40000,
+                category: "ল্যাপটপ ও কম্পিউটার",
+                location: "মিরপুর-১, ঢাকা",
+                condition: "ব্যবহৃত",
+                sellerName: "RedVanta Bazar",
+                whatsapp: "8801677161678",
+                image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgSy15fKeVf4xO5kqnccvufksIQcYLxF3EvHqhR8emc5khDQkZ2Gc7bITo_nBPx4wjmCoEw0mZ4oY1MNU42EjCctUaVIODhw4yafW4zu0qtITmPpO4WuhL212EDM0NATjQK2gn7vZbRwr6VfYGBd9lBtKSpBty1vbY7ZQ0C90FG96izw493B_GqYwSabcXG/s1600/IMG_20261103_174120_881.jpg",
+                date: "৬ নভেম্বর, ২০২৬",
+                description: "শক্তিশালী পারফরম্যান্সের প্রিমিয়াম ল্যাপটপ। মিরপুরে এসে হাতে দেখে নেওয়ার সুযোগ আছে।",
+                status: "approved"
+            },
+            {
+                id: 3,
+                title: "HP ProBook 440 G5 - Core i5 8th Gen, 8GB RAM, 256GB SSD",
+                price: 26000,
+                category: "ল্যাপটপ ও কম্পিউটার",
+                location: "মিরপুর-১, ঢাকা",
+                condition: "ব্যবহৃত",
+                sellerName: "RedVanta Bazar",
+                whatsapp: "8801677161678",
+                image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiiK2IvK9S8RGtZ9-QzVQPRWTuPW5o0k7HSaKdGraoIYZhpgC3AeMTohI2TLE77GQppJ9hFIdhMt8ckDZzHIUZFrinYsbOUTOARfpvHnPBernLbwTKStTzGqGNDgqugva7vQX9mkH05SVhkewyt5P-q99Sek7YMq8qxQ3-lh1Di24b81GfzHn8NeknCn0IU0aM42K8/s1600/1000045861.jpg",
+                date: "৬ নভেম্বর, ২০২৬",
+                description: "স্টুডেন্ট ও অফিসের কাজের জন্য নির্ভরযোগ্য ল্যাপটপ। হাতে দেখে নিতে পারবেন।",
+                status: "approved"
+            },
+            {
+                id: 4,
+                title: "LED Sensor Dream Mushroom Lamp - অন্ধকারে নিজে জ্বলে ওঠা নাইট ল্যাম্প",
+                price: 99,
+                category: "হোম ও লিভিং",
+                location: "গেন্ডারিয়া, ঢাকা",
+                condition: "নতুন",
+                sellerName: "RedVanta Bazar",
+                whatsapp: "8801677161678",
+                image: "https://img.drz.lazcdn.com/g/kf/Sfd6c184914f54e75910905f2ae321b165.jpg_720x720q80.jpg",
+                date: "৬ নভেম্বর, ২০২৬",
+                description: "অন্ধকার হলেই নিজে নিজে জ্বলে ওঠে। সিঁড়ি, বাথরুম ও বেডরুমের জন্য উপযুক্ত।",
+                status: "approved"
+            },
+            {
+                id: 5,
+                title: "10pcs Strong Self Adhesive Wall Hooks - ড্রিল ছাড়া দেয়ালের হুক",
+                price: 99,
+                category: "হোম ও লিভিং",
+                location: "গেন্ডারিয়া, ঢাকা",
+                condition: "নতুন",
+                sellerName: "RedVanta Bazar",
+                whatsapp: "8801677161678",
+                image: "https://img.drz.lazcdn.com/g/kf/S4515df9e65a3451da3d1fe2adce577a8P.jpg_720x720q80.jpg",
+                date: "৬ নভেম্বর, ২০২৬",
+                description: "শক্ত আঠায় দেয়ালে লাগে — ড্রিল করার ঝামেলা নেই। ১০ পিসের প্যাক।",
+                status: "approved"
+            },
+            {
+                id: 6,
+                title: "Electric Hot Water Bag - ব্যথা উপশমে গরম পানির ব্যাগ",
+                price: 163,
+                category: "ইলেকট্রনিক্স",
+                location: "গেন্ডারিয়া, ঢাকা",
+                condition: "নতুন",
+                sellerName: "RedVanta Bazar",
+                whatsapp: "8801677161678",
+                image: "https://img.drz.lazcdn.com/g/kf/S3619b5c2d5324b69a745b74c8e366bb50.png_720x720q80.png",
+                date: "৬ নভেম্বর, ২০২৬",
+                description: "চার্জ দিলেই গরম হয়, অনেকক্ষণ গরম থাকে। শরীরের ব্যথা উপশমে কার্যকর।",
+                status: "approved"
+            }
+        ];
+
+        // State variables
+        let products = [];
+        let currentCategory = "সব";
+        let searchQuery = "";
+
+        // Initialize application data
+        function initApp() {
+            const stored = localStorage.getItem('redvantabazar_products_v1');
+            if (stored) {
+                products = JSON.parse(stored);
+            } else {
+                products = initialProducts;
+                saveToStorage();
+            }
+            renderProducts();
+            updatePendingBadge();
+        }
+
+        function saveToStorage() {
+            localStorage.setItem('redvantabazar_products_v1', JSON.stringify(products));
+        }
+
+        // Render Approved Products on Feed
+        function renderProducts() {
+            const grid = document.getElementById('productGrid');
+            grid.innerHTML = "";
+
+            const filtered = products.filter(p => {
+                const isApproved = p.status === 'approved';
+                const matchesCategory = (currentCategory === "সব" || p.category === currentCategory);
+                const matchesSearch = p.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                                      p.location.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                                      p.category.toLowerCase().includes(searchQuery.toLowerCase());
+                return isApproved && matchesCategory && matchesSearch;
+            });
+
+            document.getElementById('itemCount').innerText = `${filtered.length}টি পণ্য পাওয়া গেছে`;
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `
+                    <div class="empty-state">
+                        <i class="fa-solid fa-box-open"></i>
+                        <h3>কোনো পণ্য পাওয়া যায়নি</h3>
+                        <p style="color: var(--text-muted); font-size: 13px; margin-top: 4px;">আপনার সার্চ বা ফিল্টারের সাথে মিলে এমন কোনো অনুমোদিত পোস্ট এই মুহূর্তে নেই।</p>
+                    </div>
+                `;
+                return;
+            }
+
+            filtered.forEach(product => {
+                const defaultImg = "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=500&auto=format&fit=crop&q=60";
+                const imgSrc = product.image ? product.image : defaultImg;
+
+                const card = document.createElement('div');
+                card.className = 'product-card';
+                card.innerHTML = `
+                    <div class="card-img-wrap">
+                        <img src="${imgSrc}" class="card-img" alt="${product.title}" onerror="this.src='${defaultImg}'">
+                        <span class="condition-tag">${product.condition}</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-title">${product.title}</div>
+                        <div class="card-price">৳ ${Number(product.price).toLocaleString('bn-BD')}</div>
+                        <div class="card-meta">
+                            <div class="card-meta-item"><i class="fa-solid fa-location-dot"></i> ${product.location}</div>
+                            <div class="card-meta-item"><i class="fa-solid fa-user"></i> সেলার: ${product.sellerName}</div>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn-view" onclick="openDetailModal(${product.id})"><i class="fa-solid fa-eye"></i> বিস্তারিত</button>
+                            <a href="https://wa.me/${cleanWhatsapp(product.whatsapp)}?text=${encodeURIComponent('হ্যালো, আমি RedVanta Bazar এ আপনার এই পণ্যটিতে আগ্রহী: ' + product.title)}" target="_blank" class="btn-wa">
+                                <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Helper: Clean phone number for WhatsApp URL
+        function cleanWhatsapp(phone) {
+            let num = phone.replace(/[^0-9]/g, '');
+            if (!num.startsWith('88')) {
+                num = '88' + num;
+            }
+            return num;
+        }
+
+        // Search Handler
+        function handleSearch() {
+            searchQuery = document.getElementById('searchInput').value;
+            renderProducts();
+        }
+
+        // Category Filter Handler
+        function filterByCategory(category) {
+            currentCategory = category;
+            
+            // Update Active Buttons
+            const pills = document.querySelectorAll('.category-pill');
+            pills.forEach(pill => {
+                if(pill.innerText.includes(category) || (category === 'সব' && pill.innerText.includes('সব'))) {
+                    pill.classList.add('active');
+                } else {
+                    pill.classList.remove('active');
+                }
+            });
+
+            document.getElementById('sectionTitle').innerHTML = `<i class="fa-solid fa-bag-shopping" style="color: var(--primary-light);"></i> ${category === 'সব' ? 'সর্বশেষ অনুমোদিত পণ্যসমূহ' : category}`;
+            renderProducts();
+        }
+
+        // Modal Controls: Post Form
+        function openPostModal() {
+            document.getElementById('postModal').classList.add('active');
+        }
+        function closePostModal() {
+            document.getElementById('postModal').classList.remove('active');
+        }
+
+        // Handle Seller Free Post Submit
+        function handlePostSubmit(e) {
+            e.preventDefault();
+
+            const newProduct = {
+                id: Date.now(),
+                title: document.getElementById('postTitle').value,
+                price: Number(document.getElementById('postPrice').value),
+                category: document.getElementById('postCategory').value,
+                condition: document.getElementById('postCondition').value,
+                location: document.getElementById('postLocation').value,
+                sellerName: document.getElementById('postSellerName').value,
+                whatsapp: document.getElementById('postWhatsapp').value,
+                image: document.getElementById('postImage').value,
+                description: document.getElementById('postDescription').value,
+                date: new Date().toLocaleDateString('bn-BD', { year: 'numeric', month: 'long', day: 'numeric' }),
+                status: 'pending' // Admin must approve
+            };
+
+            products.unshift(newProduct);
+            saveToStorage();
+            updatePendingBadge();
+
+            alert('ধন্যবাদ! আপনার পণ্যটি সফলভাবে জমা দেওয়া হয়েছে। এডমিন রিভিউ শেষ হলে এটি ওয়েবসাইটে দেখা যাবে।');
+            document.getElementById('postForm').reset();
+            closePostModal();
+        }
+
+        // Modal Controls: Product Detail View
+        function openDetailModal(id) {
+            const product = products.find(p => p.id === id);
+            if (!product) return;
+
+            const defaultImg = "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=500&auto=format&fit=crop&q=60";
+            const imgSrc = product.image ? product.image : defaultImg;
+
+            const modalBody = document.getElementById('detailModalBody');
+            modalBody.innerHTML = `
+                <img src="${imgSrc}" class="detail-img" alt="${product.title}" onerror="this.src='${defaultImg}'">
+                <span class="condition-tag" style="position:static; display:inline-block; margin-bottom:8px;">${product.condition}</span>
+                <h2>${product.title}</h2>
+                <div class="detail-price">৳ ${Number(product.price).toLocaleString('bn-BD')}</div>
+                
+                <div class="detail-info-grid">
+                    <div><strong>ক্যাটাগরি:</strong> ${product.category}</div>
+                    <div><strong>অবস্থান:</strong> ${product.location}</div>
+                    <div><strong>বিক্রেতা:</strong> ${product.sellerName}</div>
+                    <div><strong>পোস্টের তারিখ:</strong> ${product.date}</div>
+                </div>
+
+                <div style="margin-bottom: 16px;">
+                    <h4 style="margin-bottom:6px; color: var(--primary-dark);">পণ্যের বিবরণ:</h4>
+                    <p style="font-size: 14px; color: var(--text-main); white-space: pre-line;">${product.description}</p>
+                </div>
+
+                <a href="https://wa.me/${cleanWhatsapp(product.whatsapp)}?text=${encodeURIComponent('হ্যালো, আমি RedVanta Bazar এ আপনার এই পণ্যটিতে আগ্রহী: ' + product.title)}" target="_blank" class="btn-wa" style="padding: 12px; font-size: 15px; border-radius: 8px;">
+                    <i class="fa-brands fa-whatsapp" style="font-size: 20px;"></i> বিক্রেতার WhatsApp-এ সরাসরি কথা বলুন
+                </a>
+
+                <div class="disclaimer-box">
+                    <strong><i class="fa-solid fa-truck-fast"></i> ডেলিভারি ও লেনদেন নীতি:</strong><br>
+                    ডেলিভারি সংক্রান্ত বিষয়ে ক্রেতা ও বিক্রেতা সরাসরি কথা বলে সিদ্ধান্ত নেবেন। আপনারা সুবিধা অনুযায়ী সুন্দরবন, এসএ পরিবহন বা ক্যাশ অন ডেলিভারি কুরিয়ার ব্যবহার করতে পারেন। ওয়েবসাইট কেবল যোগাযোগের মাধ্যম হিসেবে কাজ করে।
+                </div>
+            `;
+
+            document.getElementById('detailModal').classList.add('active');
+        }
+
+        function closeDetailModal() {
+            document.getElementById('detailModal').classList.remove('active');
+        }
+
+        // Modal Controls: Admin Panel
+        function openAdminModal() {
+            renderAdminPendingList();
+            document.getElementById('adminModal').classList.add('active');
+        }
+        function closeAdminModal() {
+            document.getElementById('adminModal').classList.remove('active');
+        }
+
+        function renderAdminPendingList() {
+            const listContainer = document.getElementById('pendingList');
+            const pendingItems = products.filter(p => p.status === 'pending');
+
+            if (pendingItems.length === 0) {
+                listContainer.innerHTML = `
+                    <div style="text-align: center; padding: 20px; color: var(--text-muted);">
+                        <i class="fa-solid fa-circle-check" style="font-size: 30px; margin-bottom: 8px; color: var(--accent);"></i>
+                        <p>বর্তমানে কোনো পেন্ডিং পোস্ট নেই। সব পোস্ট অনুমোদিত!</p>
+                    </div>
+                `;
+                return;
+            }
+
+            listContainer.innerHTML = pendingItems.map(item => `
+                <div class="admin-item">
+                    <div class="admin-item-info">
+                        <img src="${item.image || 'https://via.placeholder.com/50'}" class="admin-thumb" onerror="this.src='https://via.placeholder.com/50'">
+                        <div>
+                            <div style="font-weight: 600; font-size: 14px;">${item.title}</div>
+                            <div style="font-size: 12px; color: var(--text-muted);">৳ ${item.price} | ${item.sellerName} (${item.location})</div>
+                        </div>
+                    </div>
+                    <div class="admin-actions">
+                        <button class="btn-approve" onclick="approveProduct(${item.id})"><i class="fa-solid fa-check"></i> অনুমোদন</button>
+                        <button class="btn-reject" onclick="deleteProduct(${item.id})"><i class="fa-solid fa-trash"></i> মুছুন</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function approveProduct(id) {
+            const index = products.findIndex(p => p.id === id);
+            if (index !== -1) {
+                products[index].status = 'approved';
+                saveToStorage();
+                renderProducts();
+                renderAdminPendingList();
+                updatePendingBadge();
+            }
+        }
+
+        function deleteProduct(id) {
+            if (confirm('আপনি কি নিশ্চিত যে এই পোস্টটি মুছে ফেলতে চান?')) {
+                products = products.filter(p => p.id !== id);
+                saveToStorage();
+                renderProducts();
+                renderAdminPendingList();
+                updatePendingBadge();
+            }
+        }
+
+        function updatePendingBadge() {
+            const pendingCount = products.filter(p => p.status === 'pending').length;
+            const badge = document.getElementById('pendingBadge');
+            if (pendingCount > 0) {
+                badge.innerText = pendingCount;
+                badge.style.display = 'inline-block';
+            } else {
+                badge.style.display = 'none';
+            }
+        }
+
+        // Initialize on load
+        window.onload = initApp;
+    </script>
+</body>
+</html>
